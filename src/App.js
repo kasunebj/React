@@ -1,7 +1,6 @@
 import React,{Component} from 'react';
 import './App.css';
 import Person from './Person/Person';
-import Radium, {StyleRoot} from 'radium';
 
 class App extends Component {
 
@@ -50,10 +49,7 @@ render(){
     border : "1px solid blue",
     padding : "8px",
     cursor : "pointer",
-    ':hover':{
-      backgroundColor:"lightgreen",
-      color:"black"
-    }
+
   }
 
   let persons = null;
@@ -72,11 +68,7 @@ render(){
                   </div>
                 )
       style.backgroundColor = "red";
-      style[':hover']={
-        backgroundColor:'salmon',
-        color:"black"
 
-      }
                }
 
         const classes= [];
@@ -87,7 +79,6 @@ render(){
         }
 
   return (
-    <StyleRoot>
         <div className="App">
               <h1>hi i am a react app</h1>
               <p className={classes.join(' ')}>this is really working</p>
@@ -96,11 +87,10 @@ render(){
               onClick={this.togglePersonsHandler}>Switch Name</button>
               {persons}
         </div>
-        </StyleRoot>
   );
 }
 
 }
 
 
-export default Radium(App);
+export default App;
