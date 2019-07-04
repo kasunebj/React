@@ -42,17 +42,10 @@ togglePersonsHandler = () =>{
 }
 
 render(){
-  const style = {
-    backgroundColor : "green",
-    color:"white",
-    font : "inherit",
-    border : "1px solid blue",
-    padding : "8px",
-    cursor : "pointer",
-
-  }
 
   let persons = null;
+  let btnClass = null;
+
   if (this.state.showPersons){
       persons = (
                   <div>
@@ -67,8 +60,7 @@ render(){
                       })}
                   </div>
                 )
-      style.backgroundColor = "red";
-
+                btnClass = classes.Red;
                }
 
         const assignedClasses= [];
@@ -83,7 +75,7 @@ render(){
               <h1>hi i am a react app</h1>
               <p className={assignedClasses.join(' ')}>this is really working</p>
               <button
-              style={style}
+              className={btnClass}
               onClick={this.togglePersonsHandler}>Switch Name</button>
               {persons}
         </div>
